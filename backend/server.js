@@ -17,13 +17,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// Example route to retrieve data from Firebase
-app.get('/api/products', (req, res) => {
-  firebase.database().ref('products').once('value', (snapshot) => {
-    res.json(snapshot.val());
-  });
-});
-
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
